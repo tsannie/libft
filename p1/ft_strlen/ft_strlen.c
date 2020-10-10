@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 11:02:37 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 16:57:53 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/07 16:23:21 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t ft_strlen(const char *s)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

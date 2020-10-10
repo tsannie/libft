@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 16:53:35 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 17:27:16 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/08 08:29:17 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/08 15:17:59 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-//#include "libft.h"
+#include <stdio.h>
+#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+void ft_bzero(void *s, size_t n)
 {
-	char	*str;
-	int		i;
-
-	str = (char *)s;
-	i = ft_strlen(str);
-
-	while (i >= 0)
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i--;
-	}
-	return (NULL);
+	ft_memset(s, 0, n);
 }

@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 16:53:35 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 17:27:16 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/07 16:24:43 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/07 16:34:36 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-//#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*str;
-	int		i;
 
-	str = (char *)s;
-	i = ft_strlen(str);
-
-	while (i >= 0)
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i--;
-	}
-	return (NULL);
 }

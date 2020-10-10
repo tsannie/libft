@@ -5,32 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/05 09:47:46 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/05 10:57:51 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/08 07:48:57 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/08 08:24:51 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> 
-#include <string.h> 
+#include <string.h>
 
-//void *ft_memset(void *s, int c, size_t n)
+void *ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*src;
+	size_t			i;
 
-void printArray(int arr[], int n) 
-{ 
-   for (int i=0; i<n; i++) 
-      printf("%d ", arr[i]); 
-} 
-  
-int main()
-{ 
-    int n = 10; 
-    int arr[n]; 
-  
-    // Fill whole array with 0.
-    printf("%lu\n", sizeof(arr[0])); 
-    memset(arr, 0, n*sizeof(arr[0])); 
-    printf("Array after memset()\n"); 
-    printArray(arr, n); 
-
-    return 0; 
+	src = (unsigned char *)b;
+	i = 0;
+	while (len > i)
+	{
+		src[i] = (unsigned char)c;
+		i++;
+    }
+	b = (void *)src;
+	return (b);
 }
+
