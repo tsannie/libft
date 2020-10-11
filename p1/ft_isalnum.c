@@ -6,17 +6,16 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 18:51:42 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 07:47:06 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 10:30:59 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
 		|| (c >= '0' && c <= '9'))
 	{
-		return 1;
+		return (1);
 	}
-	return 0;
+	return (0);
 }
-

@@ -6,11 +6,11 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 16:49:24 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 07:46:22 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 10:28:56 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	char	*src;
 	int		res;

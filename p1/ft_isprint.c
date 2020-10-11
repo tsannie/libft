@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 10:06:21 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 10:18:40 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 10:17:46 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= ' ')
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }

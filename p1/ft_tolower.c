@@ -6,11 +6,11 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 10:53:15 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 11:05:06 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 10:29:36 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

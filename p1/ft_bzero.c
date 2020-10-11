@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 08:29:17 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 07:46:46 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 09:28:15 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

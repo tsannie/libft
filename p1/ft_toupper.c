@@ -6,11 +6,11 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 10:19:38 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 07:59:08 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/11 10:18:15 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
