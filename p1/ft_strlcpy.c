@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/05 18:47:16 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/05 18:50:41 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/06 18:53:40 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:58:39 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.h"
+
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (c >= '0' && c <= '9')
-		return 1;
-	return 0;
+	char	*str;
+	size_t	i;
+	size_t	e;
+
+	e = 0;
+	str = (char *)src;
+
+	while (str[e])
+		e++;
+	i = 0;
+	while (str[i] && i < size)
+	{
+		dst[i] = str[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (e);
 }

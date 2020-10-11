@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 16:53:35 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/06 17:27:16 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/06 17:36:23 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:59:02 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-//#include "libft.h"
+#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*str;
-	int		i;
+	char	*src1;
+	char	*src2;
+	size_t	i;
 
-	str = (char *)s;
-	i = ft_strlen(str);
-
-	while (i >= 0)
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i--;
-	}
-	return (NULL);
+	src1 = (char *)s1;
+	src2 = (char *)s2;
+	i = 0;
+	while ((src1[i] && src2[i]) && (src1[i] == src2[i]) && (n > i))
+		i++;
+	return (src1[i] != src2[i] ? src1[i] > src2[i] ? 1 : -1 : 0);
 }

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 08:29:17 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/08 15:17:59 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/06 10:19:38 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:59:08 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-void ft_bzero(void *s, size_t n)
+int ft_toupper(int c)
 {
-	ft_memset(s, 0, n);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (0);
 }

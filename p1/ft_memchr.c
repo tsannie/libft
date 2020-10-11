@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 17:36:23 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/07 12:51:52 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/10 19:24:43 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:57:53 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+void *ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
-	char	*src1;
-	char	*src2;
 	size_t	i;
+	unsigned char *mem;
+	unsigned char search;
 
-	src1 = (char *)s1;
-	src2 = (char *)s2;
 	i = 0;
-	while ((src1[i] && src2[i]) && (src1[i] == src2[i]) && (n > i))
+	mem = (unsigned char *)memoryBlock;
+	search = (unsigned char)searchedChar;
+	while (i < size)
+	{
+		if (mem[i] == search)
+			return (&mem[i]);
 		i++;
-	return (src1[i] != src2[i] ? src1[i] > src2[i] ? 1 : -1 : 0);
+	}
+	return (NULL);
 }

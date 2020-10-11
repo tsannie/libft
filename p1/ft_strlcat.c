@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 16:37:38 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/07 16:48:07 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/07 16:24:43 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:52:32 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char *ft_strnstr(const char	*big, const char *little, size_t len)
+/*
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
 
 }
+*/

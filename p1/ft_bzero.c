@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 18:53:40 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/07 16:24:34 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/08 08:29:17 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/11 07:46:46 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+void ft_bzero(void *s, size_t n)
 {
-	char	*str;
-	size_t	i;
-	size_t	e;
-
-	e = 0;
-	str = (char *)src;
-
-	while (str[e])
-		e++;
-	i = 0;
-	while (str[i] && i < size)
-	{
-		dst[i] = str[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (e);
+	ft_memset(s, 0, n);
 }
