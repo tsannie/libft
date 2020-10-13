@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 17:36:23 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 10:23:58 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/12 19:11:48 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	src1 = (char *)s1;
 	src2 = (char *)s2;
 	i = 0;
-	while ((src1[i] && src2[i]) && (src1[i] == src2[i]) && (n > i))
+	while ((src1[i] || src2[i]) && (i < n))
+	{
+		if (src1[i] != src2[i])
+			return ((int)(unsigned char)src1[i] - (unsigned char)src2[i]);
 		i++;
-	if (src1[i] == src2[i])
-		return (0);
-	return (src1[i] > src2[i] ? 1 : -1);
+	}
+	return (0);
 }

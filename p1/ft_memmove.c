@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 10:26:37 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/11 10:28:27 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/12 16:32:10 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	*ft_memmove(void *destination, const void *source, size_t size)
 	{
 		while (size > 0)
 		{
-			dst[size] = src[size];
 			size--;
+			dst[size] = src[size];
 		}
 	}
 	else
