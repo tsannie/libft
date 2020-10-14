@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 07:41:37 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/13 15:50:31 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:37:05 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
+
+# define I_MAX 2147483647
+# define I_MIN -2147483648
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -40,5 +44,13 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
+char	**ft_split(char const *str, char charset);
+void	ft_rev_char_tab(char *tab);
+void	ft_rev_int_tab(int *tab, int size);
+char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
