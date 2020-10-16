@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 18:29:25 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/16 15:41:10 by tsannie          ###   ########.fr       */
+/*   Created: 2020/10/15 09:57:16 by tsannie           #+#    #+#             */
+/*   Updated: 2020/10/16 15:41:44 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		size_global(char *src, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	size;
-	size_t	i;
-
-	i = start;
-	size = 0;
-	while (size < len && src[i])
-	{
-		size++;
-		i++;
-	}
-	return (size);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	size;
 	char	*res;
-	char	*src;
+	int		globalsize;
+	int		i;
+	int		e;
 
-	src = (char *)s;
-	size = size_global(src, start, len);
-	i = 0;
-	if (!(res = malloc(sizeof(char) * size + 1)))
+	if (!(s1) || !(s2))
 		return (NULL);
-	while (i < size)
+	globalsize = ft_strlen(s1) + ft_strlen(s2);
+	if (!(res = malloc(sizeof(char) * globalsize + 1)))
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		res[i] = src[i + start];
+		res[i] = s1[i];
 		i++;
 	}
-	res[size] = '\0';
+	e = 0;
+	while (s2[e])
+	{
+		res[i + e] = s2[e];
+		e++;
+	}
+	res[globalsize] = '\0';
 	return (res);
 }
