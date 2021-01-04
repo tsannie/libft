@@ -6,15 +6,26 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/11 08:07:49 by tsannie           #+#    #+#              #
-#    Updated: 2020/11/16 12:44:16 by tsannie          ###   ########.fr        #
+#    Updated: 2021/01/04 12:24:09 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
-CC			= gcc -Wall -Wextra -Werror
+CC			= @gcc -Wall -Wextra -Werror
 INCLUDE		= libft.h
+RM			= @rm -rf
 
-RM			= rm -rf
+BLACK		:= $(shell tput -Txterm setaf 0)
+RED			:= $(shell tput -Txterm setaf 1)
+GREEN		:= $(shell tput -Txterm setaf 2)
+YELLOW		:= $(shell tput -Txterm setaf 3)
+LIGHTPURPLE	:= $(shell tput -Txterm setaf 4)
+PURPLE		:= $(shell tput -Txterm setaf 5)
+BLUE		:= $(shell tput -Txterm setaf 6)
+WHITE		:= $(shell tput -Txterm setaf 7)
+BOLD		:=$(shell tput -Txterm bold)
+END			:= $(shell tput -Txterm sgr0)
+NAMEC		= ${BLUE}${BOLD}$(NAME)${END}
 
 SRC			= ft_isdigit.c ft_memmove.c ft_strncmp.c ft_atoi.c ft_isprint.c \
 ft_memset.c ft_strnstr.c ft_bzero.c ft_memccpy.c ft_strchr.c ft_strrchr.c \
@@ -35,18 +46,27 @@ BONUS_OBJ	= $(BONUS:.c=.o)
 all:		$(NAME)
 
 $(NAME): 	$(OBJ)
-			@ar -rc $(NAME) $(OBJ)
+			@echo "${PURPLE}${BOLD}Start compile ...${END}"
+			@ar rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
+			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
 
 bonus:		$(OBJ) $(BONUS_OBJ)
-			@ar -rc $(NAME) ${BONUS_OBJ} $(OBJ)
+			@echo "${PURPLE}${BOLD}Start compile ...${END}"
+			@ar rc $(NAME) ${BONUS_OBJ} $(OBJ)
 			@ranlib $(NAME)
+			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build" \
+				"(with ${BOLD}${WHITE}$@${END}${GREEN}) !${END}"
 
 clean:
 			$(RM) $(OBJ) $(BONUS_OBJ)
+			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been cleaned up !" \
+			 "(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
 
 fclean:		clean
 			$(RM) $(NAME)
+			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been deleted !" \
+				"(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
 
 re:			fclean all
 
