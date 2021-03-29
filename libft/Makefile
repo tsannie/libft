@@ -6,12 +6,13 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/11 08:07:49 by tsannie           #+#    #+#              #
-#    Updated: 2021/01/04 12:24:09 by tsannie          ###   ########.fr        #
+#    Updated: 2021/03/29 10:58:03 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
-CC			= @gcc -Wall -Wextra -Werror
+CC			= @gcc
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDE		= libft.h
 RM			= @rm -rf
 
@@ -23,7 +24,7 @@ LIGHTPURPLE	:= $(shell tput -Txterm setaf 4)
 PURPLE		:= $(shell tput -Txterm setaf 5)
 BLUE		:= $(shell tput -Txterm setaf 6)
 WHITE		:= $(shell tput -Txterm setaf 7)
-BOLD		:=$(shell tput -Txterm bold)
+BOLD		:= $(shell tput -Txterm bold)
 END			:= $(shell tput -Txterm sgr0)
 NAMEC		= ${BLUE}${BOLD}$(NAME)${END}
 
@@ -45,17 +46,19 @@ BONUS_OBJ	= $(BONUS:.c=.o)
 
 all:		$(NAME)
 
+%.o: %.c
+			@printf "${PURPLE}${BOLD}Start compile ... %-33.33s\r${END}" $@
+			${CC} ${CFLAGS} -c $< -o $@
+
 $(NAME): 	$(OBJ)
-			@echo "${PURPLE}${BOLD}Start compile ...${END}"
 			@ar rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
-			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
+			@echo "\n${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
 
 bonus:		$(OBJ) $(BONUS_OBJ)
-			@echo "${PURPLE}${BOLD}Start compile ...${END}"
 			@ar rc $(NAME) ${BONUS_OBJ} $(OBJ)
 			@ranlib $(NAME)
-			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build" \
+			@echo "\n${GREEN}The $(NAMEC) ${GREEN}has been build" \
 				"(with ${BOLD}${WHITE}$@${END}${GREEN}) !${END}"
 
 clean:
