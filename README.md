@@ -1,5 +1,7 @@
 # libft
-My first project of 42cursus. (2020-2021)
+The aim of this project is to code a C library regrouping usual functions that
+you’ll be allowed to use in all your other projects.
+It's my first project of 42cursus. (2020-2021) 💻
 
 * Result : 115/100 ✅
 
