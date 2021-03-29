@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 10:37:47 by tsannie           #+#    #+#             */
-/*   Updated: 2021/01/04 13:22:36 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/03/29 11:04:43 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		be_char(char a, char *charset)
+static int		be_char(char a, char *charset)
 {
 	size_t i;
 
@@ -26,7 +26,7 @@ int		be_char(char a, char *charset)
 	return (0);
 }
 
-int		size_glob(char *src, char *charset)
+static int		size_glob(char *src, char *charset)
 {
 	size_t	len;
 	size_t	i;
@@ -44,7 +44,7 @@ int		size_glob(char *src, char *charset)
 	return (len);
 }
 
-void	filling(char *src, char *charset, char *res, size_t len)
+static void		filling(char *src, char *charset, char *res, size_t len)
 {
 	size_t	i;
 	size_t	e;
@@ -61,7 +61,7 @@ void	filling(char *src, char *charset, char *res, size_t len)
 	res[e] = '\0';
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 	char	*src;

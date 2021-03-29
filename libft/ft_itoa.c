@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 12:24:08 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/14 16:44:06 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/03/29 11:03:02 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		size_int(int n)
+static int		size_int(int n)
 {
 	int i;
 	int cpy;
@@ -32,7 +32,7 @@ int		size_int(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*res;
 	int		neg;
